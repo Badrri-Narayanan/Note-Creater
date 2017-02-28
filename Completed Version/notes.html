@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<title>Notes</title>
+	<link rel="stylesheet" type="text/css" href="notes_files/mystyle.css"></style>
+</head>
+<body>
+
+	<script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+	<script type="text/javascript" src="notes_files/add_notes.js"></script>
+
+	<h1>Note Saver</h1>
+	<h2>You can enter notes here and it will be saved<br>CAUTION:Refreshing the page will erase it</h2>
+	<h3>Click this button to add new notes<span id="blinker">==>></span></h3>
+	<div id="data_input">
+		<table id="tblTextBoxes">
+        		<tr>
+            			<td>
+					<textarea v-model="message" id="t_box" placeholder="Enter Text"></textarea>
+         
+	    			</td>
+        		</tr>
+    		</table>
+	</div>
+	<br><br>
+	<div id="func_buttons">
+
+		<button id="btnAdd" value="Add Notes" onclick="AddTextBox()">Add Notes</button>
+	</div>
+</body>
+</html>
