@@ -4,16 +4,12 @@ import CustomButton from './components/custom-button/custom-button.component';
 import InputField from './components/input-field/input-field.component';
 import TaskList from './components/task-list/task-list.component';
 
+import { connect } from 'react-redux'
+
+import { setTaskList, addToList } from './redux/list_of_tasks/list_of_tasks.actions';
+import { setNewItem } from './redux/new_item/new_item.actions'
+
 class App extends React.Component {
-
-  constructor() {
-    super();
-
-    this.state = {
-      new_item_field: '',
-      list_of_tasks: [],
-    }
-  }
 
   componentDidMount() {
     let tasks = [
@@ -22,43 +18,45 @@ class App extends React.Component {
       "go on a vacation"
     ];
 
-    this.setState({list_of_tasks: tasks});
+    this.props.setTaskList(tasks);
   }
 
   onInputChange = (event) => {
-    this.setState({new_item_field: event.target.value})
+    this.props.setNewItem(event.target.value)
   }
 
   AddItemToList = () => {
-    const {list_of_tasks, new_item_field} = this.state;
-    if(new_item_field !== '') {
-      let new_task = list_of_tasks;
-      new_task.push(new_item_field)
-      this.setState({
-        list_of_tasks : new_task,
-        new_item_field : '',
-      });
+    const {new_item, addToList, setNewItem} = this.props
+    if(new_item === "") {
+      return
     }
-  }
-
-  RemoveItemFromList = (index) => {
-    let tasks = this.state.list_of_tasks;
-    tasks.splice(index, 1);
-    this.setState({list_of_tasks: tasks});
+    setNewItem("");
+    addToList(new_item)
   }
 
   render() {
+    const {new_item} = this.props;
     return (
       <div className="App">
         <h1>To Do list</h1>
         <div className="item-adders">
-          <InputField placeholder="Enter Item here..." value={this.state.new_item_field} type="text" onChange={this.onInputChange} />
+          <InputField placeholder="Enter Item here..." value={new_item} type="text" onChange={this.onInputChange} />
           <CustomButton onClick={ this.AddItemToList}>Add Item</CustomButton>
         </div>
-        <TaskList list_of_tasks={this.state.list_of_tasks} removeItem = {this.RemoveItemFromList} />
+        <TaskList />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  new_item : state.new_item_value.new_item,
+})
+
+const mapDispatchToProps = dispatch => ({
+    setTaskList: tasks => dispatch(setTaskList(tasks)),
+    setNewItem: new_item => dispatch(setNewItem(new_item)),
+    addToList: item => dispatch(addToList(item))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
