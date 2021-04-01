@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Badrri-Narayanan/my_to_do_app/static/css/main.bc423e30.chunk.css",
+    "main.js": "/Badrri-Narayanan/my_to_do_app/static/js/main.0a754655.chunk.js",
+    "main.js.map": "/Badrri-Narayanan/my_to_do_app/static/js/main.0a754655.chunk.js.map",
+    "runtime-main.js": "/Badrri-Narayanan/my_to_do_app/static/js/runtime-main.aed00200.js",
+    "runtime-main.js.map": "/Badrri-Narayanan/my_to_do_app/static/js/runtime-main.aed00200.js.map",
+    "static/js/2.9927a7ec.chunk.js": "/Badrri-Narayanan/my_to_do_app/static/js/2.9927a7ec.chunk.js",
+    "static/js/2.9927a7ec.chunk.js.map": "/Badrri-Narayanan/my_to_do_app/static/js/2.9927a7ec.chunk.js.map",
+    "static/js/3.78562de3.chunk.js": "/Badrri-Narayanan/my_to_do_app/static/js/3.78562de3.chunk.js",
+    "static/js/3.78562de3.chunk.js.map": "/Badrri-Narayanan/my_to_do_app/static/js/3.78562de3.chunk.js.map",
+    "index.html": "/Badrri-Narayanan/my_to_do_app/index.html",
+    "static/css/main.bc423e30.chunk.css.map": "/Badrri-Narayanan/my_to_do_app/static/css/main.bc423e30.chunk.css.map",
+    "static/js/2.9927a7ec.chunk.js.LICENSE.txt": "/Badrri-Narayanan/my_to_do_app/static/js/2.9927a7ec.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aed00200.js",
+    "static/js/2.9927a7ec.chunk.js",
+    "static/css/main.bc423e30.chunk.css",
+    "static/js/main.0a754655.chunk.js"
+  ]
+}
